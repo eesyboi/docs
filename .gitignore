@@ -1,9 +1,0 @@
-*.iml
-
-## Directory-based project format:
-.idea/
-
-### Jekyll template
-_site/
-.sass-cache/
-.jekyll-metadata
