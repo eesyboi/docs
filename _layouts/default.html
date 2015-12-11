@@ -1,90 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>Jetstrap Docs{% if page.title }%} - {{page.title}}{% endif %}</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="">
-	<meta name="author" content="">
-	<!-- Le styles -->
-	<link href="/assets/css/bootstrap.css" rel="stylesheet">
-	<style>
-		body { padding-top: 60px; /* 60px to make the container go all the way
-      to the bottom of the topbar */ }
-	</style>
-	<link href="/assets/css/bootstrap-responsive.css" rel="stylesheet">
-	<link href="/assets/css/docs.css" rel="stylesheet">
-	<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-	<!--[if lt IE 9]>
-	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
-	</script>
-	<![endif]-->
-	<!-- Le fav and touch icons -->
-	<link rel="shortcut icon" href="assets/ico/favicon.ico">
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
-	<link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
-	<style>
-	</style>
-</head>
-<body>
-<!--<a href="https://github.com/driftyco/jetstrap-docs"><img style="position: absolute; z-index: 10000; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>-->
-<div class="navbar navbar-fixed-top">
-	<div class="navbar-inner">
-		<div class="container">
-			<a href="/" class="brand"><img src="http://s3.amazonaws.com/jetstrap-site/images/jetstrap_logo.png"></a>
-			<ul class="nav pull-right">
-				<li><a href="http://jetstrap.com/">Jetstrap</a></li>
-				<li><a href="http://jetstrap.com/#about">About</a></li>
-				<!--<li><a href="http://jetstrap.com/#love">Love</a></li>-->
-				<li><a href="http://blog.jetstrap.com/" target="_blank">Blog</a></li>
-				<li><a href="https://github.com/driftyco/jetstrap-docs/tree/gh-pages" target="_blank">Fork This!</a></li>
-				<li style="line-height: 59px; vertical-align: middle"><a href="http://jetstrap.com/" class="orange-button">Sign up free</a></li>
-			</ul>
-		</div>
-	</div>
-</div>
-<div class="container">
-	<div class="row">
-		<div class="span3">
-			<ul id="menu" class="nav nav-list" data-spy="affix">
-				<li class="nav-header">JETSTRAP DOCS</li>
-				<li data-section=""><a href="/">Home</a></li>
-				<li class="nav-header">USING JETSTRAP</li>
-				<li data-section="jetstrap/gettingstarted"><a href="/jetstrap/gettingstarted.html">Getting Started</a></li>
-				<li data-section="builder/components"><a href="/builder/components.html">Components</a></li>
-				<li class="nav-header">SUPPORT</li>
-				<li><a href="mailto:support@jetstrap.com">Contact Support</a></li>
-			</ul>
-		</div>
-		<div class="span9">
-			{{content}}
-		</div>
-	</div>
-</div>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width">
 
-<style>
+        <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+        <meta name="description" content="{{ site.subtitle }}">
 
-</style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">
-</script>
-<script src="/assets/js/bootstrap.js">
-</script>
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Josefin+Sans%3A400%2C600%2C700%2C400italic%2C600italic%2C700italic%7CLato%3A400%2C400italic%2C700%2C700italic%2C300%2C300italic%7CPT+Sans%3A400%2C700%2C400italic%2C700italic%7CJosefin+Sans%3A100%2C300%2C400%2C600%2C700%2C100italic%2C300italic%2C400italic%2C600italic%2C700italic%7COxygen%3A400%2C300%2C700&amp;ver=4.2.5" type="text/css" media="all">
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="{{ site.siteurl }}//wp-content/themes/tastypress/style.css?ver=4.2.5" type="text/css" media="all">
+        <link rel="stylesheet" href="{{ site.baseurl }}/css/syntax.css">
+        <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
 
-<script>
-	$('#menu [data-section="{{page.section}}"]').addClass('active');
-</script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	    <script src="{{ site.baseurl }}/js/toc.js"></script>
+    </head>
+    <body>
 
-<script type="text/javascript">
-	var _gaq = _gaq || [];
-	_gaq.push(['_setAccount', 'UA-33987438-3']);
-	_gaq.push(['_trackPageview']);
-	(function() {
-		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	})();
-</script>
-</body>
+        <div id="page" class="site">
+            <header id="masthead" class="site-header" role="banner">
+                {% include header.html %}
+            </header>
+
+            <div class="site-content">
+                <div class="container main-content-area">
+                    <div class="row">
+                        <div class="main-content-inner col-sm-12 col-md-10 center-block">
+                            <div class="row">
+                                {% assign post_count = site.pages|size %}
+                                {% if site.navigation != 0 and site.navigation == 1 or post_count > 0 %}
+                                    <div id="navigation" class="col-xs-12 col-sm-3 col-md-3">
+                                        <div class="well">
+                                            {% assign version = "2.0" %}
+                                            {% capture my-include %}{% include navigation.md %}{% endcapture %}
+                                            {{ my-include | markdownify }}
+                                        </div>
+                                    </div>
+
+                                    <div id="content" class="col-xs-12 col-sm-9 col-md-9">
+                                        {{ content }}
+                                    </div>
+                                {% else %}
+                                    <div id="content" class="col-xs-12 col-sm-12 col-md-12">
+                                        {{ content }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% if page.disqus == 1 %}
+            <div class="container">
+                <div class="row">
+                  {% if site.navigation == 1 or post_count > 0 %}
+                    <div id="navigation" class="navbar col-sm-2"></div>
+                    <div id="disqus" class="col-sm-10">
+                        {% include disqus.html %}
+                    </div>
+                  {% else %}
+                    <div id="disqus" class="col-sm-12">
+                        {% include disqus.html %}
+                    </div>
+                  {% endif %}
+                </div>
+            </div>
+            {% endif %}
+
+        </div>
+
+        <div id="footer-area">
+	        {% include footer.html %}
+        </div>
+
+        <script>
+	        var pageUrl = '{{page.path | replace: ".md", ""}}';
+            var listItems = $("#navigation li");
+            listItems.each(function(idx, li) {
+                var list = $(li);
+                var listUl = list.find('ul');
+                var link = list.children('a');
+                var linkId = link.attr('href');
+
+                $(li).parents('ul').addClass('nav');
+
+                if (listUl.length > 0 && link.length > 0) {
+
+	                listUl.attr({id: linkId.substring(1, linkId.length), class: "nav collapse"});
+	                link.prepend('<span class="fa fa-control"></span>');
+                    link.attr({
+                        href: linkId,
+                        'data-toggle': "collapse",
+                        'data-parent': "#navigation .nav",
+                        'aria-expanded': "true",
+                        'aria-controls': linkId.substring(1, linkId.length)
+                    });
+
+	                link.on('click', function (e) {
+                        link.removeClass('active');
+                        if (!listUl.is(':visible')) {
+			                link.addClass('active');
+		                }
+	                });
+                }
+            });
+
+	        $('#navigation li a[href="/'+pageUrl+'"]').addClass('active');
+	        $('#navigation li a[href="/'+pageUrl+'"]').parents('.collapse').parent().children('a').addClass('active');
+	        $('#navigation li a[href="/'+pageUrl+'"]').parents('.collapse').parent().children('ul').addClass('in');
+
+	        anchors.options.visible = 'always';
+            anchors.add('h2');
+        </script>
+        {% if site.google_analytics_id != "" %}
+        {% include google_analytics.html %}
+        {% endif %}
+    </body>
 </html>

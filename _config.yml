@@ -1,3 +1,68 @@
-markdown: rdiscount
-pygments: true
-permalink: /:categories/:title
+# Site title and subtitle. This is used in _includes/header.html
+title: 'TastyIgniter'
+subtitle: ''
+
+# if you wish to integrate disqus on pages set your shortname here
+disqus_shortname: ''
+
+# if you use google analytics, add your tracking id here
+google_analytics_id: ''
+
+# Enable/show navigation. There are there options:
+#   0 - always hide
+#   1 - always show
+#   2 - show only if posts are present
+navigation: 1
+
+# URL to source code, used in _includes/footer.html
+codeurl: ''
+github_editme_url: 'tastyigniter/docs/edit/2.0'
+
+# Default categories (in order) to appear in the navigation
+#sections: [
+#    ['user-guide', 'User Guide'],
+#    ['tutorial', 'Tutorial'],
+#    ['reference', 'Reference'],
+#    ['developer_guide', 'Developer Guide'],
+#    ['designer_guide', 'Designer Guide']
+#]
+
+# Keep as an empty string if served up at the root. If served up at a specific
+# path (e.g. on GitHub pages) leave off the trailing slash, e.g. /my-project
+baseurl: ''
+siteurl: 'http://tastyigniter.com'
+imageurl: 'http://tastyigniter.com'
+
+# Dates are not included in permalinks
+permalink: pretty
+
+# Syntax highlighting
+highlighter: pygments
+
+# Since these are pages, it doesn't really matter
+future: true
+
+# Exclude non-site files
+exclude: ['bin', 'README.md']
+
+# Use the redcarpet Markdown renderer
+markdown: redcarpet
+redcarpet:
+    extensions: [
+        'no_intra_emphasis',
+        'fenced_code_blocks',
+        'autolink',
+        'strikethrough',
+        'superscript',
+        'with_toc_data',
+        'tables',
+        'hardwrap'
+    ]
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: ""
+    values:
+      layout: "default"

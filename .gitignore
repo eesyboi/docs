@@ -1,0 +1,10 @@
+*.sw?
+.htaccess
+_data
+_includes/*
+!_includes/navigation.md
+_layouts/*
+_site
+bin
+js
+_config.yml
